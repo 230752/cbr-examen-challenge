@@ -32,3 +32,9 @@ function prettyDump ( $var ) {
     var_dump($var);
     echo "</pre>";
 }
+
+$sqli_prepare = $con->prepare("SELECT id, question, image FROM auto_examen;");
+$sqli_prepare->execute();
+$sqli_prepare->bind_result($id, $question, $image);
+$sqli_prepare->fetch();
+$sqli_prepare->close();

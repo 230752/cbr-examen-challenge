@@ -1,3 +1,6 @@
+<?php
+include ('database/db_connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +17,10 @@
             <h2>Vraag 1</h2>
         </div>
     <div class="image">
-    <img src="test.png" alt="">
+    <img src="<?=$image ?>" alt="">
     </div>
     <div class="vraag">
-        <p>Wat is de vraag?</p>
+        <p><?=$question?></p>
     </div>
     <div class="opties">
         <button id="optie">Optie 1</button>
