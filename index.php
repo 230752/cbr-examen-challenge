@@ -9,9 +9,11 @@
 <body>
     <div class="hoofdpagina">
     <h1>Welkom bij deze CBR theory les</h1>
+    <h3>klik op de startknop om te beginnen</h3>
     </div>
-    <div id="test">
-        <button class="knopje">Start</button>
+    <div id="button_loc">
+        <button class="start_button">Start</button>
     </div>
+
 </body>
 </html>

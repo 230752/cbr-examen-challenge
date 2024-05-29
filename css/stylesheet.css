@@ -11,12 +11,12 @@ body{
     text-align: center;
 }
 
-#test{
+#button_loc{
    display: flex;
    justify-content: center;
 }
 
-.knopje{
+.start_button{
     background-color: #f2f2f2;
     border: none;
     color: black;
@@ -28,4 +28,12 @@ body{
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 10px;
+}
+.start_button:hover{
+    background-color: lightgray;
+    color: black;
+}
+.start_button:active{
+    background-color: darkgray;
+    color: black;
 }
