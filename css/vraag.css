@@ -46,9 +46,7 @@ footer{
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.volgende_button{
-    display: flex;
-    justify-content: center;
+.pagebutton{
     background-color: #f2f2f2;
     border: none;
     color: black;
@@ -60,15 +58,17 @@ footer{
     cursor: pointer;
     border-radius: 10px;
 }
-.vorige_button{
-    background-color: #f2f2f2;
-    border: none;
+.pagebutton:hover{
+    background-color: lightgray;
     color: black;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 10px;
+}
+.pagebutton:active{
+    background-color: darkgray;
+    color: black;
+}
+
+
+.pagebuttons{
+    display: flex;
+    justify-content: space-between;
 }

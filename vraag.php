@@ -29,9 +29,9 @@
     
 </body>
 <footer>
-    <div class="footer">
-        <button class="volgende_button">Volgende</button>
-        <button class="vorige_button">Volgende</button>
+    <div class="pagebuttons">
+        <button class="pagebutton">vorige</button>
+        <button class="pagebutton">Volgende</button>
     </div>
 </footer>
 </html>
