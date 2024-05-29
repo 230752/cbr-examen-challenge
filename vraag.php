@@ -17,7 +17,8 @@ include ('database/db_connect.php');
             <h2>Vraag 1</h2>
         </div>
     <div class="image">
-    <img src="<?=$image ?>" alt="">
+    <img src="<?=$image ?>" alt="No image available" 
+    onerror="this.onerror=null; this.src='noimage.jpg';">
     </div>
     <div class="vraag">
         <p><?=$question?></p>
