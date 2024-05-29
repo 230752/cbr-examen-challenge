@@ -9,10 +9,15 @@
 <body>
     <h1>Vraag:"<?=$id ?>"</h1>
 
-    <div class="vraag">
-        <div class="vraagtitel"></div>
+    <div class="item">
+        <div class="vraagtitel">
+            <h2>Vraag 1</h2>
+        </div>
     <div class="image">
-
+    <img src="test.png" alt="">
+    </div>
+    <div class="vraag">
+        <p>Wat is de vraag?</p>
     </div>
     <div class="opties">
         <button id="optie">Optie 1</button>
@@ -23,4 +28,10 @@
     </div>
     
 </body>
+<footer>
+    <div class="footer">
+        <button class="volgende_button">Volgende</button>
+        <button class="vorige_button">Volgende</button>
+    </div>
+</footer>
 </html>
