@@ -1,5 +1,9 @@
 <?php
 include ("database/db_connect.php");
+if ($_SESSION['login'] == true) {
+    header("location: index.php");
+}
+
 echo "username: " . $user;
 echo "<br>";
 echo "password: " . $pass;
