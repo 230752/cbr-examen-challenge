@@ -23,6 +23,7 @@ if ($_SESSION['vraag'] > 20) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/vraag.css">
+    <link rel="shortcut icon" href="https://www.cbr.nl/logo.jpg" type="image/x-icon" />
     <title>CBRTheorie</title>
 </head>
 
