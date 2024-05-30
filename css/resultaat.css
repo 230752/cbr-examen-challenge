@@ -63,19 +63,9 @@ body {
   height: 40vh;
 }
 
-/* Button */
-
-.start-button {
-  color: #ffffff;
-  background-color: #0489f0;
-  border: none;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 25px;
-  cursor: pointer;
+.resultaat {
+  background-color: white;
+  padding: 25px;
   border-radius: 4px;
   font-weight: bold;
-  margin-top: 100px;
 }
