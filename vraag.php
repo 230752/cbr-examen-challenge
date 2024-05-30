@@ -1,5 +1,10 @@
 <?php
 include('database/db_connect.php');
+
+if($_SESSION['login'] == false) {
+    header("location: index.php");
+}
+
 if (isset($_POST['optie'])) {
     $optie = $_POST['optie'];
     if ($optie == $antwoord) {
@@ -14,7 +19,6 @@ if (isset($_POST['optie'])) {
 if ($_SESSION['vraag'] > 20) {
     header("location: resultaat.php");
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +30,11 @@ if ($_SESSION['vraag'] > 20) {
     <link rel="shortcut icon" href="https://www.cbr.nl/logo.jpg" type="image/x-icon" />
     <title>CBRTheorie</title>
 </head>
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
 
 <body>
     <header>

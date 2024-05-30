@@ -1,3 +1,6 @@
+<?php
+include ("database/db_connect.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,31 +20,49 @@
           <h1>Welkom bij CBRTheorie!</h1>
         </div>
         <div class="nav-login">
-          <button class="login-button">
-            <div style="display: flex; align-items: center">
-              <svg width="36" height="36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <defs>
-                  <circle id="a" cx="18" cy="18" r="18" />
-                </defs>
-                <g fill="none" fill-rule="evenodd">
-                  <use fill="#0588F0" xlink:href="#a" />
-                  <g stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                    <path d="M9.596 26.506c0-4.673 3.839-6.577 8.574-6.577 4.735 0 8.574 1.904 8.574 6.577H9.596zM22.127 12.366a4.28 4.28 0 0 0-4.287-4.275 4.28 4.28 0 0 0-4.287 4.275 4.28 4.28 0 0 0 4.287 4.275 4.28 4.28 0 0 0 4.287-4.275z" />
-                  </g>
-                </g>
-              </svg>
-              <span>Mijn CBR (Inloggen)</span>
-            </div>
-          </button>
+          <?php
+          if ($_SESSION['login'] == false) { ?>
+            <a href="login.php">
+            <?php } else { ?>
+              <a href="index.php">
+              <?php } ?>
+              <button class="login-button">
+                <div style="display: flex; align-items: center">
+                  <svg width="36" height="36" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                      <circle id="a" cx="18" cy="18" r="18" />
+                    </defs>
+                    <g fill="none" fill-rule="evenodd">
+                      <use fill="#0588F0" xlink:href="#a" />
+                      <g stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                        <path
+                          d="M9.596 26.506c0-4.673 3.839-6.577 8.574-6.577 4.735 0 8.574 1.904 8.574 6.577H9.596zM22.127 12.366a4.28 4.28 0 0 0-4.287-4.275 4.28 4.28 0 0 0-4.287 4.275 4.28 4.28 0 0 0 4.287 4.275 4.28 4.28 0 0 0 4.287-4.275z" />
+                      </g>
+                    </g>
+                  </svg>
+                  <?php
+                  if ($_SESSION['login'] == false) { ?>
+                    <span>Mijn CBR (Inloggen)</span>
+                  <?php } else { ?>
+                    <span>Mijn CBR (Ingelogd)</span>
+                  <?php } ?>
+                </div>
+              </button>
+            </a>
         </div>
       </div>
     </nav>
   </header>
   <main>
     <div class="container">
-      <a href="vraag.php">
-        <button class="start-button">Start</button>
-      </a>
+      <?php if ($_SESSION['login'] == true) { ?>
+        <a href="vraag.php">
+          <button class="start-button">Start</button>
+        </a>
+      <?php } else {
+        echo "<p id='log'>U bent nog niet ingelogd</p>";
+      } ?>
     </div>
   </main>
   <footer></footer>

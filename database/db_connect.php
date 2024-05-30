@@ -1,21 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['vraag'])) {
-    $_SESSION['vraag'] = 1;
-    $_SESSION['punten'] = 0;
-}
 
-/**
- * Voor de MAC gebruikers;
- */
-// $dbhost = "localhost";
-// $dbuser = "root";
-// $dbpass = "root";
-// $dbname = "webdev_base";
-
-/**
- * Voor de Windows gebruikers;
- */
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
@@ -29,7 +14,6 @@ if ($con->connect_errno) {
 }
 
 define("BASEURL", "http://localhost/cbr-examen/cbr-examen-challenge/vragen.php");
-define("BASEURL_CMS", "http://localhost/module-4-1-crud-wdv-230752/admin/");
 
 function prettyDump($var) {
     echo "<pre>";
@@ -37,9 +21,24 @@ function prettyDump($var) {
     echo "</pre>";
 }
 
+if(!isset($_SESSION['login'])) {
+    $_SESSION['login'] = false;
+}
+
+if (!isset($_SESSION['vraag'])) {
+    $_SESSION['vraag'] = 1;
+    $_SESSION['punten'] = 0;
+}
+
 $sqli_prepare = $con->prepare("SELECT id, question, image, answer FROM auto_examen WHERE id = ?;");
 $sqli_prepare->bind_param("i", $_SESSION['vraag']);
 $sqli_prepare->execute();
 $sqli_prepare->bind_result($id, $question, $image, $antwoord);
+$sqli_prepare->fetch();
+$sqli_prepare->close();
+
+$sqli_prepare = $con->prepare("SELECT id, gebruikersnaam, wachtwoord FROM accounts");
+$sqli_prepare->execute();
+$sqli_prepare->bind_result($userid, $user, $pass);
 $sqli_prepare->fetch();
 $sqli_prepare->close();
