@@ -18,6 +18,7 @@ if (isset($_POST['optie'])) {
 
 if ($_SESSION['vraag'] > 20) {
     header("location: resultaat.php");
+    $_SESSION['finished'] = true;
 }
 ?>
 <!DOCTYPE html>

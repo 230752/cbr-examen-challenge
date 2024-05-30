@@ -23,6 +23,7 @@ function prettyDump($var) {
 
 if(!isset($_SESSION['login'])) {
     $_SESSION['login'] = false;
+    $_SESSION['finished'] = false;
 }
 
 if (!isset($_SESSION['vraag'])) {
