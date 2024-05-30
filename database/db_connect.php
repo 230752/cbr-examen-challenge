@@ -13,7 +13,7 @@ if ($con->connect_errno) {
     exit();
 }
 
-define("BASEURL", "http://localhost/cbr-examen/cbr-examen-challenge/vragen.php");
+define("BASEURL", "http://localhost/cbr-examen/cbr-examen-challenge");
 
 function prettyDump($var) {
     echo "<pre>";
@@ -23,6 +23,7 @@ function prettyDump($var) {
 
 if(!isset($_SESSION['login'])) {
     $_SESSION['login'] = false;
+    $_SESSION['finished'] = false;
 }
 
 if (!isset($_SESSION['vraag'])) {
