@@ -1,5 +1,5 @@
 <?php
-include ("database/db_connect.php");
+include("database/db_connect.php");
 if ($_SESSION['login'] == true) {
     header("location: index.php");
 }
@@ -10,10 +10,10 @@ echo "password: " . $pass;
 echo "<br>";
 print_r($_SESSION['login']);
 
-if(isset($_POST['login'])) {
+if (isset($_POST['login'])) {
     $gebruikersnaam = $_POST['gebruikersnaam'];
     $wachtwoord = $_POST['wachtwoord'];
-    if($gebruikersnaam == $user && $wachtwoord == $pass) {
+    if ($gebruikersnaam == $user && $wachtwoord == $pass) {
         $_SESSION['login'] = true;
         header("location: index.php");
     }
@@ -28,8 +28,8 @@ if(isset($_POST['login'])) {
     <title>test login</title>
 </head>
 <script>
-    if ( window.history.replaceState ) {
-        window.history.replaceState( null, null, window.location.href );
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
     }
 </script>
 
