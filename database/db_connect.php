@@ -2,6 +2,7 @@
 session_start();
 if (!isset($_SESSION['vraag'])) {
     $_SESSION['vraag'] = 1;
+    $_SESSION['punten'] = 0;
 }
 
 /**
