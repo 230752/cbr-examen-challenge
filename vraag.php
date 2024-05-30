@@ -1,5 +1,15 @@
 <?php
 include('database/db_connect.php');
+if (!isset($_SESSION['vraag'])) {
+    $_SESSION['vraag'] = 1;
+}
+if (isset($_POST['optie'])) {
+    $optie = $_POST['optie'];
+    if ($optie == $antwoord) {
+        $_SESSION['vraag'] += 1;
+        header("location: vraag.php");
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,37 +18,60 @@ include('database/db_connect.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/vraag.css">
-    <link rel="shortcut icon" href="https://www.cbr.nl/logo.jpg" type="image/x-icon" />
-    <title>CBRTheorie</title>
+    <title>Theorie examen auto</title>
 </head>
 
 <body>
-    <h1>Vraag:"<?= $id ?>"</h1>
-
-    <div class="item">
-        <div class="vraagtitel">
-            <h2>Vraag <?= $id ?></h2>
+    <header>
+        <nav>
+            <div class="nav-bar">
+                <div class="nav-title">
+                    <h1 class="title">CBRTheorie</h1>
+                </div>
+                <div class="nav-login">
+                    <button class="login-button">
+                        <div style="display: flex; align-items: center">
+                            <svg width="36" height="36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <defs>
+                                    <circle id="a" cx="18" cy="18" r="18" />
+                                </defs>
+                                <g fill="none" fill-rule="evenodd">
+                                    <use fill="#0588F0" xlink:href="#a" />
+                                    <g stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                        <path d="M9.596 26.506c0-4.673 3.839-6.577 8.574-6.577 4.735 0 8.574 1.904 8.574 6.577H9.596zM22.127 12.366a4.28 4.28 0 0 0-4.287-4.275 4.28 4.28 0 0 0-4.287 4.275 4.28 4.28 0 0 0 4.287 4.275 4.28 4.28 0 0 0 4.287-4.275z" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <span>Mijn CBR (Inloggen)</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="item">
+                <h2>Vraag <?= $id ?></h2>
+                <img class="image" src="<?= $image ?>" alt="Image">
+                <p class="question"><?= $question ?></p>
+                <div class="options-container">
+                    <form method="post">
+                        <button id="optie" class="button-answer" name="optie" value="gas loslaten">Gas loslaten</button>
+                        <button id="optie" class="button-answer" name="optie" value="remmen">Remmen</button>
+                        <button id="optie" class="button-answer" name="optie" value="gas geven">Gas geven</button>
+                        <button id="optie" class="button-answer" name="optie" value="niets">Niets</button>
+                    </form>
+                </div>
+                <div class="button-page">
+                    <button class="button-back">Vorige</button>
+                    <button class="button-forward">Volgende</button>
+                </div>
+            </div>
         </div>
-        <div class="image">
-            <img src="<?= $image ?>" alt="noimg">
-        </div>
-        <div class="vraag">
-            <p><?= $question ?></p>
-        </div>
-        <div class="opties">
-            <button id="optie" value="gaslos">Gas loslaten</button>
-            <button id="optie" value="remmen">Remmen</button>
-            <button id="optie" value="gassen">Gas geven</button>
-            <button id="optie" value="niets">Niets</button>
-        </div>
-    </div>
-
+    </main>
+    <footer>
+    </footer>
 </body>
-<footer>
-    <div class="pagebuttons">
-        <button class="pagebutton">Vorige</button>
-        <button class="pagebutton">Volgende</button>
-    </div>
-</footer>
 
 </html>
