@@ -10,11 +10,6 @@ if (isset($_POST['optie'])) {
     }
     header("location: vraag.php");
 }
-
-if ($_SESSION['vraag'] >= 15) {
-    header("location: geslaagd.php");
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
