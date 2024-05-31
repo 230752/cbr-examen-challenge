@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2024 at 05:07 PM
+-- Generation Time: May 31, 2024 at 09:47 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -39,7 +39,7 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`id`, `gebruikersnaam`, `wachtwoord`, `resultaat`) VALUES
-(1, 'test', 'test123', '');
+(1, 'CBRTheorie', 'CBR', 'gezakt');
 
 -- --------------------------------------------------------
 
