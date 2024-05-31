@@ -59,7 +59,7 @@ include("database/db_connect.php");
           <button class="start-button">Start</button>
         </a>
       <?php } else {
-        echo "<p id='log'>U bent nog niet ingelogd</p>";
+        echo "<p class='text'>Log in om te beginnen met het examen.</p>";
       } ?>
     </div>
   </main>

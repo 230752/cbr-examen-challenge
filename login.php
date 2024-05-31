@@ -4,12 +4,6 @@ if ($_SESSION['login'] == true) {
     header("location: index.php");
 }
 
-echo "username: " . $user;
-echo "<br>";
-echo "password: " . $pass;
-echo "<br>";
-print_r($_SESSION['login']);
-
 if (isset($_POST['login'])) {
     $gebruikersnaam = $_POST['gebruikersnaam'];
     $wachtwoord = $_POST['wachtwoord'];
@@ -25,6 +19,7 @@ if (isset($_POST['login'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
     <title>test login</title>
 </head>
 <script>
@@ -34,11 +29,23 @@ if (isset($_POST['login'])) {
 </script>
 
 <body>
-    <form method="post">
-        <input type="text" name="gebruikersnaam">
-        <input type="text" name="wachtwoord">
-        <input type="submit" name="login">
-    </form>
+    <div class="container">
+        <div class="content">
+            <form method="post">
+                <input type="text" name="gebruikersnaam" placeholder="Gebruikersnaam">
+                <?php
+                echo "(" . $user . ")";
+                ?>
+                <br><br>
+                <input type="text" name="wachtwoord" placeholder="Wachtwoord">
+                <?php
+                echo "(" . $pass . ")";
+                ?>
+                <br><br>
+                <input type="submit" name="login" value="Inloggen" class="inloggen">
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
