@@ -1,6 +1,6 @@
 html,
 body {
-  background-image: url("../img/auto.jpg");
+  background-image: url("../public/assets/img/auto.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   font-family: Arial, Helvetica, sans-serif;
